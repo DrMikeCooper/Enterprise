@@ -4,6 +4,7 @@ using System.Collections;
 public class Need : MonoBehaviour {
 
     public static ArrayList needs = new ArrayList();
+    public static ArrayList consoles = new ArrayList();
     static GameObject meterPrefab = null;
 
     public Crew attendee;
@@ -17,6 +18,8 @@ public class Need : MonoBehaviour {
     // Use this for initialization 
     void Start () {
         needs.Add(this);
+        if (GetComponent<Crew>() == null)
+            consoles.Add(this);
         urgency = 0;
         if (meterPrefab == null)
             meterPrefab = Resources.Load<GameObject>("meter");

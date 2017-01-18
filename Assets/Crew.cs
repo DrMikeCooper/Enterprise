@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Crew : MonoBehaviour {
 
+    static public ArrayList crew = new ArrayList();
+
     Need damage;
     Need currentNeed;
 
@@ -14,6 +16,8 @@ public class Crew : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        crew.Add(this);
+
         nv = GetComponent<NavMeshAgent>();
         damage = GetComponent<Need>();
 
